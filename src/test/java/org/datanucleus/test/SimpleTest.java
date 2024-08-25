@@ -22,16 +22,13 @@ public class SimpleTest
         {
             tx.begin();
 
-            Product prd1 = new Product(1, "Laptop", "An electronic Device");
-            Product prd2 = new Product(2, "Chair", "Furniture");
-            pm.makePersistent(prd1);
-            pm.makePersistent(prd2);
-
-            Person per1 = new Person("ABC", 30, "III");
-            Person per2 = new Person("DEF", 56, "UUU");
-//          pm.makePersistent(per1);
-//          pm.makePersistent(per2);
-
+            Set<Address> AddressSet = new HashSet<Address>();
+            Address add1 = new Address("1st Street", "MONZA", 1);
+            Address add2 = new Address("2st Street", "IMOLA", 2);
+            AddressSet.add(add1);
+            AddressSet.add(add2);
+            Account acc1 = new Account(AddressSet, "ABC", "DEF", 1);
+            pm.makePersistent(acc1);
             tx.commit();
         }
         catch (Throwable thr)
