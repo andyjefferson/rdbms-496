@@ -30,7 +30,7 @@
                  <column name="PRODUCT_DESCRIPTION" length="767" jdbc-type="VARCHAR"/>
             </field>
 
-            <field name="suppliers" table="PERSON">
+            <field name="suppliers" table="PRODUCT_PERSON">
                 <collection element-type="Person"/>
                 <join>
                     <primary-key name="PRODUCT_SUPPLIER_PK">
